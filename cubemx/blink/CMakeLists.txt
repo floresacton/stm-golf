@@ -21,6 +21,10 @@ endif()
 # Set the project name
 set(CMAKE_PROJECT_NAME blink)
 
+set(CMAKE_C_FLAGS_RELEASE "-O3 -flto -fdata-sections -ffunction-sections")
+set(CMAKE_CXX_FLAGS_RELEASE "-O3 -flto -fdata-sections -ffunction-sections")
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,--gc-sections")
+
 # Include toolchain file
 include("cmake/gcc-arm-none-eabi.cmake")
 
@@ -66,3 +70,15 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
 
     # Add user defined libraries
 )
+
+# Generate bin file
+add_custom_command(
+    OUTPUT ${CMAKE_PROJECT_NAME}.bin
+    COMMAND ${CMAKE_OBJCOPY} -O binary ${CMAKE_PROJECT_NAME}.elf ${CMAKE_PROJECT_NAME}.bin
+    DEPENDS ${CMAKE_PROJECT_NAME}.elf
+)
+add_custom_target(
+    gen_bin ALL
+    DEPENDS ${CMAKE_PROJECT_NAME}.bin
+)
+add_dependencies(gen_bin ${CMAKE_PROJECT_NAME})
