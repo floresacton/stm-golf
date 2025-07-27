@@ -6,6 +6,6 @@ Minimizing STM32 Programs
 ### cmake blink
 ```
 Memory region  Used Size  Region Size  %age Used
-         RAM:     1576 B       128 KB      1.20%
-       FLASH:     2296 B       128 KB      1.75%
+         RAM:     1568 B       128 KB      4.79%
+       FLASH:     1464 B       128 KB      1.12%
 ```

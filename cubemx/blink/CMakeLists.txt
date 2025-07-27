@@ -22,7 +22,6 @@ endif()
 set(CMAKE_PROJECT_NAME blink)
 
 set(CMAKE_C_FLAGS_RELEASE "-O3 -flto -fdata-sections -ffunction-sections")
-set(CMAKE_CXX_FLAGS_RELEASE "-O3 -flto -fdata-sections -ffunction-sections")
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,--gc-sections")
 
 # Include toolchain file
