@@ -13,7 +13,7 @@ Memory region  Used Size  Region Size  %age Used
 ### custom blink
 ```
 Memory region  Used Size  Region Size  %age Used
-         RAM:        0 B       128 KB      4.79%
-       FLASH:       76 B       128 KB      1.12%
+         RAM:        0 B       128 KB      0.00%
+       FLASH:       76 B       128 KB      0.06%
 ```
 
